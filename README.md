@@ -4,8 +4,18 @@ aaa.sh 对内存读写文件，防止cpu休眠！
 
 
 ----------------------------分割符----------------------------
-
-
+# 23-05-27 
+   packages.list 文件为openwrt_x86-64备份的安装插件包名
+ 备份命令： 
+   opkg list-installed | cut -f 1 -d ' ' > /etc/config/packages.list #保存路径为 /etc/config ，可以在系统更新后仍保留下来。
+ 恢复命令： 
+   opkg update
+   cat /etc/config/packages.list | opkg install
+   
+   
+   
+   
+----------------------------分割符----------------------------
 
 ##以下是本人用 openwrt x86-64固件 遇到的问题
 
